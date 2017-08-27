@@ -22,7 +22,7 @@ define(function(){
 			if (this.check("makeNotification", arguments)){
 				options.ticker = options.ticker || options.content;
 				options.contentInfo = options.contentInfo || "";
-				window.Android.makeNotification(options.title, options.ontent, options.ticker, options.contentInfo);
+				window.Android.makeNotification(options.title, options.content, options.ticker, options.contentInfo);
 			}
 		}
 	};

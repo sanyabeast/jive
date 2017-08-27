@@ -14,11 +14,11 @@ define(["posturl"], function(posturl){
 		});
 
 
-		window.addEventListener("touchstart", function(){
+		driver.addEventListener("touchstart", function(){
 			Droid.makeNotification({
 				title : "Драйвер",
 				content : "Тест: " + input.value,
-				ticker : Math.random().toString();
+				ticker : Math.random().toString()
 			});
 		});
 
