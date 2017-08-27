@@ -6,6 +6,8 @@ html, body {
 	background: black;
 	color: white;
 	perspective: 200px;
+	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
 }
 
 ._flex-centric {
@@ -31,6 +33,10 @@ html, body {
 	background-size: 400%;
 	overflow: hidden;
 	position: relative;
+	background: url("../res/space2.jpg");
+	animation: bg infinite 300s;
+	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);	
 }
 
 #driver input {
@@ -47,29 +53,38 @@ html, body {
 }
 
 #background {
+	display: none;
 	position: absolute;
-	height: 900px;
-	animation: bg infinite 60s;
+	background: url("../res/space2.jpg");
+	animation: bg infinite 300s;
+	height: 100%;
+	width: 100%;
+    filter: brightness(15%);
+    -webkit-filter: brightness(15%);
+    left:0;
+    top:0;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
 }
 
 @keyframes bg {
 	0% {
-		transform: translateX(15px) translateY(15px);
+		background-position: 0% 100%;
 	}
 
 	25% {
-		transform: translateX(30px) translateY(15px);
+		background-position: 100% 50%;
 	}
 
 	50% {
-		transform: translateX(30px) translateY(30px);
+		background-position: 0% 50%;
 	}
 
 	75% {
-		transform: translateX(15px) translateY(15px);
+		background-position: 50% 0%;
 	}
 
 	100% {
-		transform: translateX(15px) translateY(15px);
+		background-position: 0% 100%;
 	}
 }

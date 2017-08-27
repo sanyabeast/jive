@@ -1,6 +1,10 @@
 package comsanyabeast.github.dryver;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
@@ -11,19 +15,36 @@ import android.widget.Toast;
 
 public class WebAppInterface {
     Context mContext;
+    Intent intent;
+    PendingIntent contentIntent;
 
     /** Instantiate the interface and set the context */
     WebAppInterface(Context c) {
         mContext = c;
+        intent = new Intent(mContext, MainActivity.class);
+        contentIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
     }
 
     @JavascriptInterface
-    public void makeNotification(String title, String content){
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(mContext)
-                        .setSmallIcon(R.mipmap.ic_launcher_round)
-                        .setContentTitle(title)
-                        .setContentText(content);
+    public void makeNotification(String title, String content, String ticker, String contentInfo){
+
+        NotificationCompat.Builder b = new NotificationCompat.Builder(mContext);
+
+        b.setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setTicker(ticker)
+                .setContentTitle(title)
+                .setContentText(content)
+                .setDefaults(Notification.DEFAULT_LIGHTS| Notification.DEFAULT_SOUND)
+                .setContentIntent(contentIntent)
+                .setContentInfo(contentInfo);
+
+
+        NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(1, b.build());
     }
 
     /** Show a toast from the web page */

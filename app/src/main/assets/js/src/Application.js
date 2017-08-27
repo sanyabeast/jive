@@ -15,11 +15,13 @@ define(["posturl"], function(posturl){
 
 
 		window.addEventListener("touchstart", function(){
-			Android.showToast(Math.random());
-			Android.makeNotification("privet", "hello");
+			Droid.makeNotification({
+				title : "Драйвер",
+				content : "Тест: " + input.value,
+				ticker : Math.random().toString();
+			});
 		});
 
-		Android.makeNotification("privet", "hello");
 	};
 
 	Application.prototype = {

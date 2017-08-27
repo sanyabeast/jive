@@ -6,8 +6,8 @@ requirejs.config({
 	},
 });
 
-requirejs(["Android", "Application"], function(Android, Application){
-	if (typeof window.Android == "undefined") window.Android = new Android();
+requirejs(["Droid", "Application"], function(Droid, Application){
+	window.Droid = new Droid();
 	window.app = new Application();
 
 });
