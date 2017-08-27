@@ -5,4 +5,75 @@ html, body {
 	overflow: hidden;
 	background: black;
 	color: white;
+	perspective: 200px;
+}
+
+._flex-centric {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#driver {
+	background: #e91e63;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	animation: color 60s infinite, rotate 1s infinite ease-in-out;
+}
+
+#driver p {
+	font-family: sans-serif;
+	text-transform: uppercase;	
+	font-size: 36px;
+
+}
+
+@keyframes color {
+	0% {
+		background: hsl(340, 82%, 35%);
+	}
+
+	10% {
+		background: hsl(20, 82%, 35%);
+	}
+
+	20% {
+		background: hsl(60, 82%, 35%);
+	}
+
+	30% {
+		background: hsl(100, 82%, 35%);
+	}
+
+	40% {
+		background: hsl(140, 82%, 35%);
+	}
+
+	50% {
+		background: hsl(180, 82%, 35%);
+	}
+
+	60% {
+		background: hsl(220, 82%, 35%);
+	}
+
+	70% {
+		background: hsl(260, 82%, 35%);
+	}
+
+	80% {
+		background: hsl(300, 82%, 35%);
+	}
+
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate3d(0,0,0,0deg);
+	}
+
+	50% {
+		transform: rotate3d(-1,0,0,10deg);
+	}
 }

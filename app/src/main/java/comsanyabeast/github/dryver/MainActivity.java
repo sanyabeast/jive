@@ -1,5 +1,6 @@
 package comsanyabeast.github.dryver;
 
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;

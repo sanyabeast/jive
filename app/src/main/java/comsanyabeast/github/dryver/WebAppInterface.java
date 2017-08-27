@@ -1,6 +1,7 @@
 package comsanyabeast.github.dryver;
 
 import android.content.Context;
+import android.support.v4.app.NotificationCompat;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
@@ -16,9 +17,20 @@ public class WebAppInterface {
         mContext = c;
     }
 
+    @JavascriptInterface
+    public void makeNotification(String title, String content){
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(mContext)
+                        .setSmallIcon(R.mipmap.ic_launcher_round)
+                        .setContentTitle(title)
+                        .setContentText(content);
+    }
+
     /** Show a toast from the web page */
     @JavascriptInterface
     public void showToast(String toast) {
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
     }
+
+
 }
