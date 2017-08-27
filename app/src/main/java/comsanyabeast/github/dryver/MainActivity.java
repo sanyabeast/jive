@@ -3,7 +3,6 @@ package comsanyabeast.github.dryver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupWebView(){
         webview = (WebView) findViewById(R.id.webview);
-        webview.setWebViewClient(new WebViewClient());
+        webview.setWebViewClient(new CustomWebViewClient());
         webview.getSettings().setJavaScriptEnabled(true);
+        webview.addJavascriptInterface(new WebAppInterface(this), "Android");
     }
 
     @Override
@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setupWebView();
-        this.loadPage("http://google.com");
+        this.loadPage("file:///android_asset/js/index.html");
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webview.canGoBack()){
+            webview.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
