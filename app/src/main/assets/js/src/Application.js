@@ -5,9 +5,10 @@ define(["posturl"], function(posturl){
 
 	var Application = function(){
 		var div = document.createElement("div");
-		div.innerHTML = "Privet!";
-		Android.showToast("Privet");
-		posturl.write("privet");
+		div.innerHTML = "Hello!";
+		document.body.appendChild(div);
+		Android.showToast("Hello");
+		posturl.write("hello", { timiestamp : +new Date() });
 	};
 
 	Application.prototype = {

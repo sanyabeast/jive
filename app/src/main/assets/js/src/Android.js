@@ -7,7 +7,7 @@ define(function(){
 
 	Android.prototype = {
 		showToast : function(toast){
-			alert(toast);
+			console.warn("Android: toast:", toast);
 		}
 	};
 
