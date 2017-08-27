@@ -14,66 +14,77 @@ html, body {
 	justify-content: center;
 }
 
+._fit-parent-width {
+	width: 100%;
+}
+
+._fit-parent-height {
+	height: 100%;
+}
+
 #driver {
-	background: #e91e63;
+	background: url("../res/space.jpg");
 	width: 300px;
 	height: 300px;
 	border-radius: 50%;
-	animation: color 60s infinite, rotate 1s infinite ease-in-out;
+	animation: color 40s infinite, rotate 1s infinite ease-in-out;
+	z-index: 1;
 }
 
-#driver p {
+#driver input {
 	font-family: sans-serif;
 	text-transform: uppercase;	
 	font-size: 36px;
+	border: 0;
+    background: transparent;
+    text-align: center;
+    color: white;
+    outline: none;
 
 }
+
+#background {
+	position: absolute;
+	/*filter: blur(35px) brightness(45%);*/
+	/*-webkit-filter: blur(35px) brightness(45%);*/
+}
+
+/*#background > div {
+	width: 100%;
+	height: 100%;
+	background: url("../res/space.jpg");
+	animation: color 180s infinite;
+}*/
 
 @keyframes color {
 	0% {
-		background: hsl(340, 82%, 35%);
+		background-position: 0 0%;
 	}
 
-	10% {
-		background: hsl(20, 82%, 35%);
-	}
-
-	20% {
-		background: hsl(60, 82%, 35%);
-	}
-
-	30% {
-		background: hsl(100, 82%, 35%);
-	}
-
-	40% {
-		background: hsl(140, 82%, 35%);
+	25% {
+		background-position: 100% 100%;
 	}
 
 	50% {
-		background: hsl(180, 82%, 35%);
+		background-position: 100 0%;
 	}
 
-	60% {
-		background: hsl(220, 82%, 35%);
+	75% {
+		background-position: 0 100%;
 	}
 
-	70% {
-		background: hsl(260, 82%, 35%);
-	}
-
-	80% {
-		background: hsl(300, 82%, 35%);
+	100% {
+		background-position: 0 0%;
 	}
 
 }
 
-@keyframes rotate {
+/*@keyframes rotate {
 	0% {
 		transform: rotate3d(0,0,0,0deg);
 	}
 
 	50% {
-		transform: rotate3d(-1,0,0,10deg);
+		transform: rotate3d(-1,0,0,10deg) scaleX(1.1) scaleY(1.1);
 	}
-}
+}*/
