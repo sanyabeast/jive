@@ -54,22 +54,22 @@ html, body {
 
 @keyframes bg {
 	0% {
-		transform: translateX(0px) translateY(0px);
+		transform: translateX(15px) translateY(15px);
 	}
 
 	25% {
-		transform: translateX(300px) translateY(0px);
+		transform: translateX(30px) translateY(15px);
 	}
 
 	50% {
-		transform: translateX(300px) translateY(300px);
+		transform: translateX(30px) translateY(30px);
 	}
 
 	75% {
-		transform: translateX(0px) translateY(0px);
+		transform: translateX(15px) translateY(15px);
 	}
 
 	100% {
-		transform: translateX(0px) translateY(0px);
+		transform: translateX(15px) translateY(15px);
 	}
 }
