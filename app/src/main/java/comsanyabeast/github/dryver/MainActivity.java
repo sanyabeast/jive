@@ -5,6 +5,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupWebView(){
         webview = (WebView) findViewById(R.id.webview);
         webview.setWebViewClient(new CustomWebViewClient());
+        webview.setWebChromeClient(new WebChromeClient());
         webview.getSettings().setJavaScriptEnabled(true);
         webview.getSettings().setDomStorageEnabled(true);
         webview.addJavascriptInterface(new WebAppInterface(this), "Android");
