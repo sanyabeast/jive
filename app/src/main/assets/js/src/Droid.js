@@ -24,6 +24,11 @@ define(function(){
 				options.contentInfo = options.contentInfo || "";
 				window.Android.makeNotification(options.title, options.content, options.ticker, options.contentInfo);
 			}
+		},
+		log : function(text){
+			if (this.check("log", arguments)){
+				window.Android.log(text);
+			}
 		}
 	};
 

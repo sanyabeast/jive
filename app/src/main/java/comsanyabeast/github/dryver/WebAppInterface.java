@@ -53,5 +53,10 @@ public class WebAppInterface {
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
     }
 
+    @JavascriptInterface
+    public void log(String text){
+        System.out.println(text);
+    }
+
 
 }
