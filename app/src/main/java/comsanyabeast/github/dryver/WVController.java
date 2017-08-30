@@ -2,7 +2,9 @@ package comsanyabeast.github.dryver;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
+import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -40,5 +42,14 @@ public class WVController {
         } else {
             webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
+    }
+
+    public void evalJS(String code){
+        webView.evaluateJavascript(code, new ValueCallback<String>() {
+            @Override
+            public void onReceiveValue(String s) {
+                Log.d("JAVASCRIPT SAYS: ", s); // Prints asd
+            }
+        });
     }
 }
