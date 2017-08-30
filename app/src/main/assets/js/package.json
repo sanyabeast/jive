@@ -12,6 +12,7 @@
         "vpplus": "git://github.com/sanyabeast/postal.git",
         "postURL": "git://github.com/sanyabeast/postURL.git",
         "requirejs": "latest",
-        "requirejs-text": "latest"
+        "requirejs-text": "latest",
+        "angular": "latest"
     }
 }
